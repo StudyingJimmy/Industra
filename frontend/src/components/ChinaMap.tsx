@@ -126,12 +126,29 @@ export default function ChinaMap({ companies, regions, selectedProvince, onProvi
             label: { show: true, color: "#e2e8f0", fontSize: 12 },
             itemStyle: { areaColor: "#1e3450" },
           },
-          regions: provinceEntries.map(([name, list]) => ({
-            name,
-            itemStyle: {
-              areaColor: `rgba(0, 212, 170, ${0.08 + (list.length / maxCount) * 0.35})`,
-            },
-          })),
+          regions: provinceEntries.map(([name, list]) => {
+            const isSelected = selectedProvince === name;
+            return {
+              name,
+              itemStyle: isSelected
+                ? {
+                    areaColor: "rgba(0, 212, 170, 0.4)",
+                    borderColor: "#00d4aa",
+                    borderWidth: 2,
+                    shadowBlur: 24,
+                    shadowColor: "rgba(0, 212, 170, 0.5)",
+                  }
+                : {
+                    areaColor: `rgba(0, 212, 170, ${0.08 + (list.length / maxCount) * 0.35})`,
+                  },
+              emphasis: isSelected
+                ? {
+                    label: { show: true, color: "#fff", fontSize: 13, fontWeight: "bold" as const },
+                    itemStyle: { areaColor: "rgba(0, 212, 170, 0.55)" },
+                  }
+                : undefined,
+            };
+          }),
         },
         visualMap: {
           show: false,
@@ -163,15 +180,24 @@ export default function ChinaMap({ companies, regions, selectedProvince, onProvi
 
       chart.off("click");
       chart.on("click", (params: any) => {
+        // Click on scatter cluster point
         if (params.seriesName === "clusters" && params.data?.data) {
           const province = params.data.data.province as string;
           onProvinceSelectRef.current(province === selectedProvince ? null : province);
           return;
         }
-        // Click empty area → deselect
-        if (params.seriesName !== "heat") {
-          onProvinceSelectRef.current(null);
+        // Click on geo region (province polygon)
+        if (params.componentType === "geo" && params.name) {
+          const province = params.name as string;
+          onProvinceSelectRef.current(province === selectedProvince ? null : province);
+          return;
         }
+        // Click on heatmap → ignore
+        if (params.seriesName === "heat") {
+          return;
+        }
+        // Click empty area → deselect
+        onProvinceSelectRef.current(null);
       });
     } catch (e) {
       console.error("Failed to load China map:", e);
