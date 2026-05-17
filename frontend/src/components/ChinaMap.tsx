@@ -32,6 +32,20 @@ export default function ChinaMap({ companies, regions, selectedProvince, onProvi
       const geoJson = await resp.json();
       echarts.registerMap("china", geoJson);
 
+      // Build mapping between company province names and GeoJSON region names
+      // Company data: "广东", GeoJSON: "广东省"
+      const geoRegionNames: string[] = geoJson.features.map((f: any) => f.properties.name);
+      const provinceToGeo: Record<string, string> = {};
+      const geoToProvince: Record<string, string> = {};
+
+      const matchGeoName = (province: string): string | null => {
+        if (geoRegionNames.includes(province)) return province;
+        let m = geoRegionNames.find((n) => n === province + "省" || n === province + "市");
+        if (m) return m;
+        m = geoRegionNames.find((n) => n.startsWith(province));
+        return m || null;
+      };
+
       // Group companies by province
       const provinceGroups: Record<string, Company[]> = {};
       companies.forEach((c) => {
@@ -42,13 +56,25 @@ export default function ChinaMap({ companies, regions, selectedProvince, onProvi
       const provinceEntries = Object.entries(provinceGroups);
       const maxCount = Math.max(...provinceEntries.map(([, list]) => list.length), 1);
 
+      // Populate name mappings
+      for (const [province] of provinceEntries) {
+        const geoName = matchGeoName(province);
+        if (geoName) {
+          provinceToGeo[province] = geoName;
+          geoToProvince[geoName] = province;
+        }
+      }
+
       const clusterData = provinceEntries.map(([province, list]) => {
         const isSelected = selectedProvince === province;
         const size = Math.max(16, 10 + (list.length / maxCount) * 26);
         const totalMarketCap = list.reduce((sum, c) => sum + (c.market_cap || 0), 0);
+        const avgLng = list.reduce((sum, c) => sum + c.lng, 0) / list.length;
+        const avgLat = list.reduce((sum, c) => sum + c.lat, 0) / list.length;
 
         return {
           name: province,
+          value: [avgLng, avgLat],
           symbolSize: isSelected ? size + 8 : size,
           itemStyle: {
             color: isSelected ? "rgba(0, 212, 170, 0.95)" : "rgba(0, 167, 255, 0.78)",
@@ -127,9 +153,10 @@ export default function ChinaMap({ companies, regions, selectedProvince, onProvi
             itemStyle: { areaColor: "#1e3450" },
           },
           regions: provinceEntries.map(([name, list]) => {
+            const geoName = provinceToGeo[name] || name;
             const isSelected = selectedProvince === name;
             return {
-              name,
+              name: geoName,
               itemStyle: isSelected
                 ? {
                     areaColor: "rgba(0, 212, 170, 0.4)",
@@ -188,7 +215,8 @@ export default function ChinaMap({ companies, regions, selectedProvince, onProvi
         }
         // Click on geo region (province polygon)
         if (params.componentType === "geo" && params.name) {
-          const province = params.name as string;
+          const geoName = params.name as string;
+          const province = geoToProvince[geoName] || geoName;
           onProvinceSelectRef.current(province === selectedProvince ? null : province);
           return;
         }
