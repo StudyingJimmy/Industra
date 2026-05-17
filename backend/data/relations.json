@@ -1,0 +1,142 @@
+{
+  "relations": [
+    {"from": "688256", "to": "000977", "type": "supplier", "desc": "AI芯片供应", "subtype": "upstream"},
+    {"from": "688256", "to": "603019", "type": "supplier", "desc": "AI芯片供应", "subtype": "upstream"},
+    {"from": "688041", "to": "000977", "type": "supplier", "desc": "CPU供应", "subtype": "upstream"},
+    {"from": "688041", "to": "603019", "type": "supplier", "desc": "CPU供应", "subtype": "upstream"},
+    {"from": "688041", "to": "000938", "type": "supplier", "desc": "CPU供应", "subtype": "upstream"},
+    {"from": "300474", "to": "000977", "type": "supplier", "desc": "GPU芯片供应", "subtype": "upstream"},
+    {"from": "688047", "to": "000977", "type": "supplier", "desc": "CPU供应", "subtype": "upstream"},
+    {"from": "688047", "to": "603019", "type": "supplier", "desc": "CPU供应", "subtype": "upstream"},
+
+    {"from": "300308", "to": "000938", "type": "supplier", "desc": "高速光模块供应", "subtype": "upstream"},
+    {"from": "300502", "to": "000938", "type": "supplier", "desc": "光模块供应", "subtype": "upstream"},
+    {"from": "300308", "to": "000977", "type": "supplier", "desc": "800G光模块供应", "subtype": "upstream"},
+    {"from": "300502", "to": "000977", "type": "supplier", "desc": "光模块供应", "subtype": "upstream"},
+    {"from": "300394", "to": "300308", "type": "supplier", "desc": "光器件供应", "subtype": "upstream"},
+    {"from": "300394", "to": "300502", "type": "supplier", "desc": "光器件供应", "subtype": "upstream"},
+    {"from": "002281", "to": "000977", "type": "supplier", "desc": "光器件供应", "subtype": "upstream"},
+    {"from": "000988", "to": "603019", "type": "supplier", "desc": "光通信器件供应", "subtype": "upstream"},
+    {"from": "688048", "to": "300308", "type": "supplier", "desc": "光芯片供应", "subtype": "upstream"},
+    {"from": "688048", "to": "300502", "type": "supplier", "desc": "光芯片供应", "subtype": "upstream"},
+    {"from": "688498", "to": "300308", "type": "supplier", "desc": "光芯片供应", "subtype": "upstream"},
+    {"from": "688498", "to": "300502", "type": "supplier", "desc": "光芯片供应", "subtype": "upstream"},
+    {"from": "688048", "to": "002281", "type": "supplier", "desc": "光芯片供应", "subtype": "upstream"},
+
+    {"from": "601869", "to": "000977", "type": "supplier", "desc": "光纤光缆供应", "subtype": "upstream"},
+    {"from": "600487", "to": "000063", "type": "supplier", "desc": "光纤供应", "subtype": "upstream"},
+    {"from": "600522", "to": "000063", "type": "supplier", "desc": "光纤供应", "subtype": "upstream"},
+
+    {"from": "002463", "to": "000977", "type": "supplier", "desc": "高速PCB供应", "subtype": "upstream"},
+    {"from": "002916", "to": "000977", "type": "supplier", "desc": "高端PCB供应", "subtype": "upstream"},
+    {"from": "002916", "to": "603019", "type": "supplier", "desc": "封装基板供应", "subtype": "upstream"},
+    {"from": "002463", "to": "601138", "type": "supplier", "desc": "企业通讯PCB供应", "subtype": "upstream"},
+    {"from": "002938", "to": "601138", "type": "supplier", "desc": "PCB供应", "subtype": "upstream"},
+    {"from": "600183", "to": "002463", "type": "supplier", "desc": "覆铜板供应", "subtype": "upstream"},
+    {"from": "600183", "to": "002916", "type": "supplier", "desc": "覆铜板供应", "subtype": "upstream"},
+    {"from": "603186", "to": "002463", "type": "supplier", "desc": "覆铜板供应", "subtype": "upstream"},
+    {"from": "603186", "to": "002916", "type": "supplier", "desc": "覆铜板供应", "subtype": "upstream"},
+
+    {"from": "002837", "to": "000977", "type": "supplier", "desc": "液冷散热系统供应", "subtype": "upstream"},
+    {"from": "002837", "to": "603019", "type": "supplier", "desc": "液冷散热系统供应", "subtype": "upstream"},
+    {"from": "300499", "to": "603019", "type": "supplier", "desc": "液冷设备供应", "subtype": "upstream"},
+    {"from": "603912", "to": "300383", "type": "supplier", "desc": "精密空调供应", "subtype": "upstream"},
+    {"from": "603912", "to": "603881", "type": "supplier", "desc": "精密空调供应", "subtype": "upstream"},
+    {"from": "300249", "to": "300383", "type": "supplier", "desc": "数据中心基础设施供应", "subtype": "upstream"},
+
+    {"from": "002335", "to": "000977", "type": "supplier", "desc": "UPS电源供应", "subtype": "upstream"},
+    {"from": "002335", "to": "603019", "type": "supplier", "desc": "UPS电源供应", "subtype": "upstream"},
+    {"from": "002518", "to": "300383", "type": "supplier", "desc": "UPS电源供应", "subtype": "upstream"},
+    {"from": "002518", "to": "603881", "type": "supplier", "desc": "UPS电源供应", "subtype": "upstream"},
+    {"from": "002364", "to": "300383", "type": "supplier", "desc": "HVDC电源供应", "subtype": "upstream"},
+    {"from": "300376", "to": "300383", "type": "supplier", "desc": "UPS电源供应", "subtype": "upstream"},
+    {"from": "300870", "to": "000977", "type": "supplier", "desc": "服务器电源供应", "subtype": "upstream"},
+    {"from": "300870", "to": "603019", "type": "supplier", "desc": "服务器电源供应", "subtype": "upstream"},
+
+    {"from": "000977", "to": "300383", "type": "customer", "desc": "采购AI服务器", "subtype": "downstream"},
+    {"from": "000977", "to": "603881", "type": "customer", "desc": "采购AI服务器", "subtype": "downstream"},
+    {"from": "603019", "to": "300383", "type": "customer", "desc": "采购AI服务器", "subtype": "downstream"},
+    {"from": "601138", "to": "300383", "type": "customer", "desc": "云计算设备供应", "subtype": "downstream"},
+    {"from": "601138", "to": "603881", "type": "customer", "desc": "云计算设备供应", "subtype": "downstream"},
+
+    {"from": "300308", "to": "601138", "type": "competitor", "desc": "光模块竞争", "subtype": "competitor"},
+    {"from": "300502", "to": "300308", "type": "competitor", "desc": "光模块竞争", "subtype": "competitor"},
+    {"from": "002281", "to": "300308", "type": "competitor", "desc": "光器件竞争", "subtype": "competitor"},
+    {"from": "000988", "to": "002281", "type": "competitor", "desc": "光器件竞争", "subtype": "competitor"},
+
+    {"from": "000977", "to": "603019", "type": "competitor", "desc": "AI服务器竞争", "subtype": "competitor"},
+    {"from": "000938", "to": "000977", "type": "competitor", "desc": "服务器与网络设备", "subtype": "competitor"},
+    {"from": "002396", "to": "000938", "type": "competitor", "desc": "交换机竞争", "subtype": "competitor"},
+    {"from": "301165", "to": "000938", "type": "competitor", "desc": "交换机竞争", "subtype": "competitor"},
+
+    {"from": "688256", "to": "688041", "type": "competitor", "desc": "AI芯片竞争", "subtype": "competitor"},
+    {"from": "300474", "to": "688256", "type": "competitor", "desc": "GPU芯片竞争", "subtype": "competitor"},
+    {"from": "688047", "to": "688041", "type": "competitor", "desc": "CPU竞争", "subtype": "competitor"},
+
+    {"from": "002463", "to": "002916", "type": "competitor", "desc": "PCB竞争", "subtype": "competitor"},
+    {"from": "603228", "to": "002463", "type": "competitor", "desc": "PCB竞争", "subtype": "competitor"},
+    {"from": "002938", "to": "002916", "type": "competitor", "desc": "PCB竞争", "subtype": "competitor"},
+
+    {"from": "002837", "to": "300499", "type": "competitor", "desc": "液冷散热竞争", "subtype": "competitor"},
+    {"from": "002837", "to": "603912", "type": "competitor", "desc": "数据中心温控竞争", "subtype": "competitor"},
+
+    {"from": "002335", "to": "002518", "type": "competitor", "desc": "UPS电源竞争", "subtype": "competitor"},
+    {"from": "300376", "to": "002518", "type": "competitor", "desc": "UPS电源竞争", "subtype": "competitor"},
+
+    {"from": "601869", "to": "600487", "type": "competitor", "desc": "光纤光缆竞争", "subtype": "competitor"},
+    {"from": "600522", "to": "600487", "type": "competitor", "desc": "光纤光缆竞争", "subtype": "competitor"},
+    {"from": "600498", "to": "601869", "type": "competitor", "desc": "光通信竞争", "subtype": "competitor"},
+
+    {"from": "600183", "to": "603186", "type": "competitor", "desc": "覆铜板竞争", "subtype": "competitor"},
+
+    {"from": "002230", "to": "688327", "type": "competitor", "desc": "AI大模型竞争", "subtype": "competitor"},
+    {"from": "002230", "to": "300229", "type": "competitor", "desc": "NLP与大模型竞争", "subtype": "competitor"},
+
+    {"from": "300383", "to": "603881", "type": "competitor", "desc": "数据中心运营竞争", "subtype": "competitor"},
+    {"from": "300738", "to": "300383", "type": "competitor", "desc": "IDC服务竞争", "subtype": "competitor"},
+
+    {"from": "300308", "to": "002281", "type": "competitor", "desc": "光通信器件竞争", "subtype": "competitor"},
+    {"from": "300394", "to": "688313", "type": "competitor", "desc": "光器件竞争", "subtype": "competitor"},
+
+    {"from": "300308", "to": "000063", "type": "customer", "desc": "光模块采购", "subtype": "downstream"},
+    {"from": "300502", "to": "000063", "type": "customer", "desc": "光模块采购", "subtype": "downstream"},
+    {"from": "002281", "to": "000063", "type": "customer", "desc": "光器件采购", "subtype": "downstream"},
+
+    {"from": "002230", "to": "300033", "type": "competitor", "desc": "AI+金融竞争", "subtype": "competitor"},
+    {"from": "688561", "to": "300454", "type": "competitor", "desc": "AI安全竞争", "subtype": "competitor"},
+    {"from": "688561", "to": "688023", "type": "competitor", "desc": "AI安全竞争", "subtype": "competitor"},
+    {"from": "002415", "to": "002236", "type": "competitor", "desc": "AI视觉竞争", "subtype": "competitor"},
+    {"from": "002415", "to": "688475", "type": "customer", "desc": "AI视觉方案", "subtype": "downstream"},
+
+    {"from": "300496", "to": "002415", "type": "customer", "desc": "操作系统方案", "subtype": "downstream"},
+    {"from": "688099", "to": "002415", "type": "customer", "desc": "AI SoC供应", "subtype": "downstream"},
+    {"from": "603160", "to": "688099", "type": "competitor", "desc": "芯片竞争", "subtype": "competitor"},
+
+    {"from": "002156", "to": "688256", "type": "customer", "desc": "芯片封测服务", "subtype": "downstream"},
+    {"from": "600584", "to": "688256", "type": "customer", "desc": "芯片封测服务", "subtype": "downstream"},
+    {"from": "002185", "to": "688041", "type": "customer", "desc": "芯片封测服务", "subtype": "downstream"},
+    {"from": "002156", "to": "688041", "type": "customer", "desc": "芯片封测服务", "subtype": "downstream"},
+    {"from": "600584", "to": "688041", "type": "customer", "desc": "芯片封测服务", "subtype": "downstream"},
+
+    {"from": "688012", "to": "688256", "type": "supplier", "desc": "半导体设备供应", "subtype": "upstream"},
+    {"from": "002371", "to": "688256", "type": "supplier", "desc": "半导体设备供应", "subtype": "upstream"},
+    {"from": "688012", "to": "688041", "type": "supplier", "desc": "半导体设备供应", "subtype": "upstream"},
+    {"from": "002371", "to": "688041", "type": "supplier", "desc": "半导体设备供应", "subtype": "upstream"},
+
+    {"from": "688981", "to": "688256", "type": "supplier", "desc": "晶圆代工", "subtype": "upstream"},
+    {"from": "688981", "to": "688041", "type": "supplier", "desc": "晶圆代工", "subtype": "upstream"},
+    {"from": "688981", "to": "300474", "type": "supplier", "desc": "晶圆代工", "subtype": "upstream"},
+
+    {"from": "002230", "to": "000977", "type": "customer", "desc": "AI算力服务", "subtype": "downstream"},
+    {"from": "002230", "to": "603019", "type": "customer", "desc": "AI算力服务", "subtype": "downstream"},
+    {"from": "688327", "to": "000977", "type": "customer", "desc": "AI算力服务", "subtype": "downstream"},
+    {"from": "300033", "to": "000977", "type": "customer", "desc": "AI算力服务", "subtype": "downstream"},
+
+    {"from": "603019", "to": "601138", "type": "competitor", "desc": "服务器与云计算", "subtype": "competitor"},
+    {"from": "300394", "to": "002281", "type": "competitor", "desc": "光器件竞争", "subtype": "competitor"},
+
+    {"from": "600584", "to": "002156", "type": "competitor", "desc": "封测竞争", "subtype": "competitor"},
+    {"from": "002185", "to": "002156", "type": "competitor", "desc": "封测竞争", "subtype": "competitor"},
+    {"from": "688012", "to": "002371", "type": "competitor", "desc": "半导体设备竞争", "subtype": "competitor"}
+  ]
+}

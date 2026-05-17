@@ -1,0 +1,65 @@
+{
+  "industries": [
+    {
+      "id": "ai_infra",
+      "name": "AI基建",
+      "name_en": "AI Infrastructure",
+      "level": 0,
+      "description": "人工智能基础设施产业，涵盖算力、数据、算法和物理基础设施四大板块",
+      "children": [
+        {
+          "id": "ai_compute",
+          "name": "算力",
+          "name_en": "Computing Power",
+          "level": 1,
+          "description": "AI算力核心硬件，包括GPU、AI芯片、服务器等计算设备",
+          "children": [
+            {"id": "gpu", "name": "GPU/AI芯片", "level": 2, "description": "图形处理器与AI加速芯片，AI训练推理的核心计算单元"},
+            {"id": "cpu", "name": "CPU/通用芯片", "level": 2, "description": "中央处理器与通用计算芯片"},
+            {"id": "server", "name": "AI服务器", "level": 2, "description": "面向AI工作负载的高性能服务器"},
+            {"id": "chip_design", "name": "芯片设计服务", "level": 2, "description": "芯片IP与设计服务"}
+          ]
+        },
+        {
+          "id": "ai_data",
+          "name": "数据传输",
+          "name_en": "Data Transmission",
+          "level": 1,
+          "description": "AI数据中心互联与数据传输基础设施",
+          "children": [
+            {"id": "optical_module", "name": "光模块", "level": 2, "description": "高速光模块，数据中心内部和之间的核心连接器件"},
+            {"id": "optical_fiber", "name": "光纤光缆", "level": 2, "description": "光纤预制棒、光纤和光缆"},
+            {"id": "switch_router", "name": "交换机/路由器", "level": 2, "description": "数据中心交换机与网络设备"},
+            {"id": "connector", "name": "连接器", "level": 2, "description": "高速连接器与背板"}
+          ]
+        },
+        {
+          "id": "ai_algorithm",
+          "name": "算法与应用",
+          "name_en": "Algorithm & Application",
+          "level": 1,
+          "description": "AI大模型、算法框架与行业应用",
+          "children": [
+            {"id": "llm", "name": "大模型", "level": 2, "description": "大规模语言模型与多模态模型"},
+            {"id": "ai_app", "name": "AI应用", "level": 2, "description": "AI在垂直行业的应用落地"},
+            {"id": "ai_data_service", "name": "AI数据服务", "level": 2, "description": "数据标注、数据合成与数据治理"}
+          ]
+        },
+        {
+          "id": "ai_physical",
+          "name": "物理基础设施",
+          "name_en": "Physical Infrastructure",
+          "level": 1,
+          "description": "AI数据中心的物理基础设施配套",
+          "children": [
+            {"id": "data_center", "name": "数据中心/IDC", "level": 2, "description": "互联网数据中心建设与运营"},
+            {"id": "cooling", "name": "液冷/散热", "level": 2, "description": "液冷服务器散热系统"},
+            {"id": "pcb", "name": "PCB/覆铜板", "level": 2, "description": "印制电路板与覆铜板"},
+            {"id": "power", "name": "电源/UPS", "level": 2, "description": "数据中心电源与不间断电源系统"},
+            {"id": "chassis", "name": "机柜/精密空调", "level": 2, "description": "服务器机柜与数据中心环境控制"}
+          ]
+        }
+      ]
+    }
+  ]
+}
