@@ -47,3 +47,6 @@ npm-debug.log*
 # Misc
 *.pem
 .cache/
+
+# Claude Code
+.claude/
